@@ -1,5 +1,5 @@
 export const Params = {
-  slidesPerView: 1,
+  slidesPerView: 3,
   spaceBetween: 20,
   pagination: {
     clickable: true,
@@ -41,7 +41,7 @@ export const Params = {
     },
     // when window width is >= 1800px  and 4k screen
     1800: {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 35,
     },
   },

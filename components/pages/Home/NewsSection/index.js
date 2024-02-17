@@ -45,7 +45,7 @@ const NewsSection = ({ data, theme }) => {
               {...Params}
               dir={Router.locale == "ar" ? "rtl" : "ltr"}
               className={classes.swiperRoot}
-              slidesPerView={3}
+          
             >
               {data.items.map((props, idx) => {
                    
