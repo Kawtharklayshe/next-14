@@ -107,8 +107,7 @@ export default function ProductCard({ theme, product }) {
         {product?.usage}
       </Typography>
       <Typography variant="h5" component="h4" className={classes.priceTitle}>
-        {/* {product?.price} {currentCurrency.value} */}
-        {product?.price}
+        {product?.price} {currentCurrency.value}
       </Typography>
       <Box>
         <Typography
@@ -127,9 +126,9 @@ export default function ProductCard({ theme, product }) {
       </Box>
       <Box className={classes.lastSectionContainer}>
         <Link href={`/itemDetails/${product.slug}`} passHref>
-          {/* <a> */}
+          <a>
             <EyeICon color={theme?.primaryColor} className={classes.eyeIcon} />
-          {/* </a> */}
+          </a>
         </Link>
         <Button
           variant="contained"

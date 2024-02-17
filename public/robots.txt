@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://elardweb.meta-itech.com
+Host: https://foliov4testweb.meta-itech.com
 
 # Sitemaps
-Sitemap: https://elardweb.meta-itech.com/sitemap.xml
+Sitemap: https://foliov4testweb.meta-itech.com/sitemap.xml

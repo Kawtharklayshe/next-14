@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
@@ -19,11 +18,12 @@ import isHomePg from "../../../../../utilies/detectHomePage/isHomePg";
 import MenuBuilder from "../../MenuBuilder";
 import CategoriesSection from "./CategoriesSection";
 // import AutocompleteSearchField from "../../../../UI/AutoSearchTextField/Type1";
-import Search from "@mui/icons-material/Search";
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
-import LanguageOutlined from "@mui/icons-material/LanguageOutlined";
-import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
-
+import {
+  Search,
+  KeyboardArrowDown,
+  LanguageOutlined,
+  SettingsOutlined,
+} from "@mui/icons-material";
 import {
   Menu,
   Box,
@@ -45,7 +45,7 @@ import OrdersIcon from "../../../../../assets/Order_light.js";
 import useCubicAnimiStyles from "../../CustomAnimation/basicCubicAnimation";
 import useUpperPartStyles from "../../CustomAnimation/upperPartHeader";
 import usePartialAnimiStyles from "../../CustomAnimation/partialAnimation";
-// import ClientThemeSetting from "../../../ClientThemeModal";
+import ClientThemeSetting from "../../../ClientThemeModal";
 import useStyles from "./style";
 
 const WebHeader = (props) => {
@@ -165,7 +165,8 @@ const WebHeader = (props) => {
   };
 
   return (
-    <Box className={globalNavClassHandler()} id="navbar">
+    <Box className={globalNavClassHandler()} id="navbar" style={{ backgroundColor: 'transparent' }}>
+
       <Box
         className={`${classes.root} ${
           isReadyToAnimate() ? upperPartStylesClasses.root : undefined
@@ -208,7 +209,6 @@ const WebHeader = (props) => {
                     {/** Nav items */}
                     {!show && (
                       <MenuBuilder
-                      navPages={pages}
                         theme={theme}
                         navList={newNavBarItems}
                         isReadyToAnimate={isReadyToAnimate}
@@ -286,10 +286,10 @@ const WebHeader = (props) => {
                         animationDelay: calcDelay(0.36),
                       }}
                     >
-                      {/* <ClientThemeSetting
+                      <ClientThemeSetting
                         globalThemeConfig={theme}
                         defaultFontScale={defaultFontScale}
-                      /> */}
+                      />
                     </Box>
                     {/** end of Client theme setting */}
                     {/** Currency, language section */}
@@ -440,11 +440,11 @@ const WebHeader = (props) => {
         </Container>
         {/** End of First Row section */}
         {/** Second Row section */}
-        <CategoriesSection
+        {/* <CategoriesSection
           categories={categories}
           isReadyToAnimate={isReadyToAnimate}
           animationDelay={calcDelay(0.48)}
-        />
+        /> */}
         {/** end of Second Row section */}
       </Box>
     </Box>

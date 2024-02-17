@@ -1,9 +1,7 @@
-
-
 import useTranslation from "next-translate/useTranslation";
 import { steps } from "../config";
 import { Box, Stepper, Step, StepLabel, Typography } from "@mui/material";
-import Circle  from "@mui/icons-material/Circle";
+import { Circle } from "@mui/icons-material";
 import useStyles, { QontoStepIconRoot, QontoConnector } from "./style";
 
 const StepperSection = ({ activeStep }) => {

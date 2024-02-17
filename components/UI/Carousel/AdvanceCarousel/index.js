@@ -84,11 +84,9 @@ const AdvanceCarousel = ({ items = [], parentTitle = "" }) => {
                   </Typography>
                   <Typography
                     variant="body1"
-                  
                     className={classes.descriptionTextSection}
                   >
-                    {/* {convertToPlain(item?.description)} */}
-                    {item?.description}
+                    {convertToPlain(item?.description)}
                   </Typography>
                   <Button
                     variant="outlined"

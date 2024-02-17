@@ -1,4 +1,3 @@
-
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
@@ -68,8 +67,7 @@ const CartPopup = ({ isCartPopupOpen, toggle }) => {
               component="h5"
               className={classes.totalValue}
             >
-              {cartInfo?.totalCost}
-              {/* {cartInfo?.totalCost} {currentCurrency.value} */}
+              {cartInfo?.totalCost} {currentCurrency.value}
             </Typography>
           </Grid>
           <Divider />

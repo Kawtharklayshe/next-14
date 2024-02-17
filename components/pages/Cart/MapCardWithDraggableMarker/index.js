@@ -1,9 +1,7 @@
-
-
 import { useEffect, useState } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import useTranslation from "next-translate/useTranslation";
-import GpsFixed  from "@mui/icons-material/GpsFixed";
+import { GpsFixed } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import useStyles, { containerStyle } from "./style";
 
@@ -44,8 +42,7 @@ const MapCardWithDraggableMarker = ({ markerInfo, setMarker }) => {
     );
   };
   // get user position if there is no marker and update map center
- 
- useEffect( () => {
+  useEffect(() => {
     if (!lat && !lng)
       navigator.geolocation.getCurrentPosition(
         (position) =>

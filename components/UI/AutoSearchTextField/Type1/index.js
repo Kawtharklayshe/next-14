@@ -5,7 +5,7 @@ import { getAutherisedFetch } from "../../../../services/httpService";
 import { ClientSideGetSearchedProductsOptions } from "../../../../services/endpoints";
 import { Box, Typography, TextField } from "@mui/material";
 import { useAutocomplete } from "@mui/base/AutocompleteUnstyled";
-import Search  from "@mui/icons-material/Search";
+import { Search } from "@mui/icons-material";
 import useStyles, { Listbox, SearchListItem } from "./style";
 
 const AutocompleteSearchField = ({
@@ -60,8 +60,7 @@ const AutocompleteSearchField = ({
   });
   const classes = useStyles({ applyAnimation: applyAnimation ? true : false });
 
- 
- useEffect( () => {
+  useEffect(() => {
     handleRefetchOptions();
   }, [searchValue]);
 

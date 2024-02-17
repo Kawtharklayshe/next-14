@@ -1,12 +1,9 @@
-
 import Link from "next/link";
 import { useRef, useState, Fragment } from "react";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import { Typography, Button, Popover } from "@mui/material";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-
+import { KeyboardArrowRight, KeyboardArrowLeft } from "@mui/icons-material";
 import useStyles from "./style";
 
 const SubMenuTypeRight = ({ theme, navItem }) => {

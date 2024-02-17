@@ -63,8 +63,7 @@ export default function OrderDetails({ headerType, theme }) {
     autherizedFetcher
   );
 
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

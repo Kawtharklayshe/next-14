@@ -35,8 +35,7 @@ export default function Category(props) {
   });
 
   // for updating main cover info when data changes
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object") {
       data &&
         setPageInfo({
@@ -58,8 +57,7 @@ export default function Category(props) {
     }
   }, [data]);
 
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 
@@ -82,7 +80,7 @@ export default function Category(props) {
           </Head>
           <Container maxWidth="false" className={classes.innerContainer}>
             <Grid container spacing={4}>
-              {data?.data?.childrenCategories.map((item) => {
+              {data?.data?.childrencategories?.map((item) => {
                 return (
                   <Grid item xs={12} md={4} key={item.id}>
                     <CategoryCard data={item} theme={theme} />

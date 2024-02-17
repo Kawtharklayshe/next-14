@@ -1,11 +1,9 @@
-
-
 import React, { Fragment } from "react";
 import { headerTypes } from "../../../../../constants/enums";
 import usePartialAnimiStyles from "../../CustomAnimation/partialAnimation";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import  Twitter  from "@mui/icons-material/Twitter";
+import { Twitter } from "@mui/icons-material";
 import useStyles from "./style";
 
 const SocialMediaList = ({
@@ -41,7 +39,8 @@ const SocialMediaList = ({
     delay += 0.04;
   });
 
-  const linksArr = socialMediaLinks?.map(({ channel, value }, index) => {
+  const linksArr = socialMediaLinks
+    .map(({ channel, value }, index) => {
       switch (channel) {
         case "Facebook":
           if (value != "")

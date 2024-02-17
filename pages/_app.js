@@ -15,6 +15,14 @@ import Header from "../components/Shared/Header";
 import Footer from "../components/Shared/Footer";
 import ContactsSpeedDial from "../components/Shared/ContactsSpeedDial";
 import CustomLoader from "../components/Shared/customLoader";
+import '../assets/assets/libs/tiny-slider/tiny-slider.css'; 
+
+// Import tiny-slider.css
+// import '../styles/line.css'; // Import line.css
+// import '../styles/materialdesignicons.min.css'; // Import materialdesignicons.min.css
+import '../assets/assets/css/tailwind.css'; // Import tailwind.css
+
+import HomePageSkelton from "../components/Shared/skeltonUI/homePageSkelton";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
@@ -36,13 +44,36 @@ import "../styles/globals.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { themeGenerator } from "../utilies/theme/themeGenerator";
-
-import HomePageSkelton from "../components/Shared/skeltonUI/homePageSkelton";
 ///
-
+const [getTheme] = useTheme();
+async function fetchTheme(language, detectedCurrency) {
+  let theme = await getTheme(language, detectedCurrency);
+ 
+  return {
+    pages: theme?.data?.navbarItems,
+    themeData: theme?.data?.theme,
+    defaultFontScale: theme?.data?.theme?.fontScale,
+    devicesCategory: theme?.data?.devicesCategory,
+    childrenCategories: theme?.data?.devicesCategory?.childrenCategories,
+    socialMediaLinks: theme?.data?.contacts,
+    navbarType: theme?.data?.theme?.navbarType,
+    currencyOptions: theme?.data?.currencies,
+    defaultCurrency: {
+      id: theme?.data?.defaultCurrency?.id,
+      name: theme?.data?.defaultCurrency?.name,
+      value: theme?.data?.defaultCurrency?.code,
+    },
+    notifications: {
+      alerts: theme?.data?.alerts,
+      popup: theme?.data?.popup,
+    },
+    eventTypes: theme?.data?.eventTypes,
+    seoSetting: theme?.data?.seoSetting,
+  };
+}
 
 function MyApp({ Component, pageProps }) {
-  const [getTheme] = useTheme();
+  console.log(pageProps)
   const Router = useRouter();
   const dispatch = useDispatch();
   const [loadingData, setLoadingData] = useState(false);
@@ -93,8 +124,7 @@ function MyApp({ Component, pageProps }) {
     dispatch(updateCurrency(currency));
   };
 
- 
- useEffect( () => {
+  useEffect(() => {
     AOS.init({
       disable: "mobile",
       once: false,
@@ -103,78 +133,37 @@ function MyApp({ Component, pageProps }) {
     localStorage.setItem("isFirstRender", JSON.stringify(true));
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-     
-      try {
-        setLoadingData(true);
-        if (Router.locale === "ar") {
-          document.body.dir = "rtl";
-        } else {
-          document.body.dir = "ltr";
-        }
-
-        const langUserCookie = Cookies.get("NEXT_LOCALE") || Router.locale;
-        const currencyUserCookie = JSON.parse(Cookies.get("CURRENCY") || null);
-        const userThemeCookie = JSON.parse(Cookies.get("THEMEPREF") || null);
-
-        // Use the useTheme hook directly inside useEffect
-        
-        const theme = await getTheme(langUserCookie, currencyUserCookie?.value);
-
-        const configThemingData = {
-          pages: theme?.data?.navbarItems,
-          themeData: theme?.data?.theme,
-          defaultFontScale: theme?.data?.theme?.fontScale,
-          devicesCategory: theme?.data?.devicesCategory,
-          childrenCategories: theme?.data?.devicesCategory?.childrenCategories,
-          socialMediaLinks: theme?.data?.contacts,
-          navbarType: theme?.data?.theme?.navbarType,
-          currencyOptions: theme?.data?.currencies,
-          defaultCurrency: {
-            id: theme?.data?.defaultCurrency?.id,
-            name: theme?.data?.defaultCurrency?.name,
-            value: theme?.data?.defaultCurrency?.code,
-          },
-          notifications: {
-            alerts: theme?.data?.alerts,
-            popup: theme?.data?.popup,
-          },
-          eventTypes: theme?.data?.eventTypes,
-          seoSetting: theme?.data?.seoSetting,
-        };
-
-        setAllData(configThemingData);
-
-        getInitialData(currencyUserCookie ?? configThemingData.defaultCurrency);
-
-        !langUserCookie && setCurrentLanguagePref(Router.locale);
-        !currencyUserCookie &&
-          setCurrentCurrencyPref(configThemingData.defaultCurrency);
-
-        if (userThemeCookie) {
-          setAllData((prevData) => ({
-            ...prevData,
-            themeData: { ...prevData.themeData, ...userThemeCookie },
-          }));
-
-          // It's crucial here to check out if there is a filter effect or not
-          if (userThemeCookie.effectId !== -1) {
-            document.documentElement.style.filter =
-              FILTER_OPTIONS[userThemeCookie.effectId].filterValue;
-          }
-        }
-
-        checkLoadImages(setLoadingData);
-      } catch (error) {
-        console.error("Error in useEffect:", error);
-        // Handle the error as needed, you might want to set an error state or log it
+  useEffect(async () => {
+    setLoadingData(true);
+    if (Router.locale == "ar") {
+      document.body.dir = "rtl";
+    } else {
+      document.body.dir = "ltr";
+    }
+    const langUserCookie = Cookies.get("NEXT_LOCALE") || Router.locale;
+    const currencyUserCookie = JSON.parse(Cookies.get("CURRENCY") || null);
+    const userThemeCookie = JSON.parse(Cookies.get("THEMEPREF") || null);
+    const configThemingData = await fetchTheme(
+      langUserCookie,
+      currencyUserCookie?.value
+    );
+    getInitialData(currencyUserCookie ?? configThemingData.defaultCurrency);
+    !langUserCookie && setCurrentLanguagePref(Router.locale);
+    !currencyUserCookie &&
+      setCurrentCurrencyPref(configThemingData.defaultCurrency);
+    if (userThemeCookie) {
+      setAllData({
+        ...configThemingData,
+        themeData: { ...configThemingData.themeData, ...userThemeCookie },
+      });
+      // it's crusial here to check out, if there is filter effect or not
+      if (userThemeCookie.effectId != -1) {
+        document.documentElement.style.filter =
+          FILTER_OPTIONS[userThemeCookie.effectId].filterValue;
       }
-    };
-
-    fetchData();
+    } else setAllData(configThemingData);
+    checkLoadImages(setLoadingData);
   }, [Router.locale]);
-  
 
   // Create rtl cache
   const cacheRtl = createCache({
@@ -187,7 +176,7 @@ function MyApp({ Component, pageProps }) {
   theme = responsiveFontSizes(theme);
 
   if (loadingData || !allData.themeData) {
-    return  <HomePageSkelton />;
+    return <HomePageSkelton />;
   }
 
   if (Component.getLayout) {

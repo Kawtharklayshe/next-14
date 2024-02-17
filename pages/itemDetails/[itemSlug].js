@@ -65,8 +65,7 @@ export default function ItemDetails({
       })),
     ];
   }
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

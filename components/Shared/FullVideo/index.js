@@ -4,7 +4,7 @@ export default function FullVideo({ open, setOpen, video = "" }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   let width = 300;
-  if (typeof window !== "object") {
+  if (typeof window !== "undefined") {
     width = window.innerWidth;
   }
   return (

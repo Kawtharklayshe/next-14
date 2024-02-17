@@ -15,7 +15,7 @@ const ReviewCard = ({ data, theme }) => {
             className={classes.avatar}
             width={63}
             height={63}
-            alt="" />
+          />
           <Box className={classes.fullNameContainer}>
             <Typography variant="h6" className={classes.fullName}>
               {data.name}

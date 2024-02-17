@@ -1,5 +1,3 @@
-
-
 import { useState, useRef } from "react";
 import { Box } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";

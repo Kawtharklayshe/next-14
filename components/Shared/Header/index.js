@@ -34,7 +34,6 @@ const Header = (props) => {
           notifications={notifications}
         />
       )}
-      
       {mainHeaderType === MAIN_HEADER_TYPES.Folio ? (
         <FolioHeader
           pages={pages}

@@ -1,19 +1,21 @@
+const nextTranslate = require("next-translate");
+
+//const { i18n } = require("./i18n");
+
 module.exports = {
   reactStrictMode: true,
-
+  ...nextTranslate(),
   eslint: {
     ignoreDuringBuilds: true,
   },
   images: {
     domains: ["cdnjs.cloudflare.com", "foliocontent.meta-itech.com"],
   },
-
- 
-  
-  
-  
-  i18n: {
-    locales: ["en", "ar"], // Add your supported locales
-    defaultLocale: "en",   // Set your default locale
-  },
 };
+// const nextTranslate = require("next-translate");
+
+// module.exports = nextTranslate({
+//   webpack: (config, { isServer, webpack }) => {
+//     return config;
+//   },
+// });

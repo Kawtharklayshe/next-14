@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { getUnreadMsgs } from "../../../utilies/chat/chatCRUDS";
 import { start } from "../../../utilies/chat/configureConnection";
@@ -31,8 +30,7 @@ const ContactsSpeedDial = ({ contactList = [] }) => {
     else setShowScrollIcon(false);
   };
 
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object")
       document.addEventListener("scroll", toggleShowScrollIcon);
     return () => {
@@ -59,10 +57,10 @@ const ContactsSpeedDial = ({ contactList = [] }) => {
     await start();
   };
 
- useEffect( () => {
+  useEffect(async () => {
     const uid = localStorage.getItem("roomId");
     if (!uid) return;
-    const unReadMsgs =  getUnreadMsgs(uid);//await
+    const unReadMsgs = await getUnreadMsgs(uid);
     setUnreadMsgs(unReadMsgs);
   }, []);
 

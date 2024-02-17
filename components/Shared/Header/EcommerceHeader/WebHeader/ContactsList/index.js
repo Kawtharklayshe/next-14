@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { getSocialMediaLink } from "../../../../../../utilies/utiliesFuctions";
 import { headerTypes } from "../../../../../../constants/enums";

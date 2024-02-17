@@ -59,8 +59,7 @@ export default function ContactUs({ data, theme, headerType }) {
     let data = await res?.json();
     if (data?.status == 200) toast.success("Subscribe successfully");
   };
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

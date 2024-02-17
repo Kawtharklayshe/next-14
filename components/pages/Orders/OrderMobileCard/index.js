@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -57,7 +56,7 @@ const OrderMobileCard = ({ itemData, theme }) => {
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12} className={classes.firstSection}>
-        <Image src={BoxIcon} className={classes.orderIcon}  alt="" />
+        <Image src={BoxIcon} className={classes.orderIcon} />
         <Box className={classes.firstSectionContent}>
           <Typography variant="subtitle1" component="h6">
             {t("orders_title_14")} #{itemData.id}

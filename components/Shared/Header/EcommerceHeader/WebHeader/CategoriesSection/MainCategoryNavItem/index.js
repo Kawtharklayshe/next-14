@@ -78,7 +78,7 @@ const MainCategoryNavItem = ({
           keepMounted
         >
           <Grid container>
-            {category.childrenCategories.map((child) => (
+            {category.childrencategories?.map((child) => (
               <Grid
                 item
                 md={4}
@@ -100,7 +100,7 @@ const MainCategoryNavItem = ({
                     className={classes.childImage}
                   />
                 </Box>
-                {child.childrenCategories.map((item) =>
+                {child.childrencategories?.map((item) =>
                   item.childrenCategories.length ? (
                     <CollapseCategoryPopoverItem
                       key={uid(item)}

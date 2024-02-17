@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import { Fragment, useState } from "react";
@@ -10,9 +9,7 @@ import {
 } from "../../../../Redux/slices/cartSlice/aysncActions";
 import { Box, Typography, Skeleton, CircularProgress } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import AddSharp from "@mui/icons-material/AddSharp";
-import RemoveSharp from "@mui/icons-material/RemoveSharp";
-
+import { AddSharp, RemoveSharp } from "@mui/icons-material";
 import useStyles from "./style";
 
 const CartCard = ({ cartItem }) => {

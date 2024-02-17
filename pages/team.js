@@ -33,8 +33,7 @@ const Team = ({ data, theme, headerType }) => {
     ],
     headerType: headerType,
   });
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

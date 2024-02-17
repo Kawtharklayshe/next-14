@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     left: "0",
     height: "100%",
     width: "100%",
-    backgroundColor: "#00000082",
+    // backgroundColor: "#00000082",
     opacity: "0.70",
   },
   // Inner Container class
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   // Button class
   button: {
     backgroundColor: `${theme.palette.onPrimary.main} !important`,
-    color: theme.palette.primary.main,
+    // color: theme.palette.primary.main,
     margin: "0px !important",
     "&:hover": {
       backgroundColor: `${theme.palette.primary.main} !important`,

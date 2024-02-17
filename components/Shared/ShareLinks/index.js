@@ -9,10 +9,7 @@ import {
   EmailShareButton,
   EmailIcon,
 } from "react-share";
-import Link from "@mui/icons-material/Link";
-import Print from "@mui/icons-material/Print";
-import AddComment from "@mui/icons-material/AddComment";
-
+import { Link, Print, AddComment } from "@mui/icons-material";
 import AddReviewModal from "../AddReviewModal";
 import useStyles from "./style";
 

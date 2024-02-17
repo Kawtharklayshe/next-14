@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import { Typography, Box } from "@mui/material";
@@ -33,10 +32,7 @@ const NewsCard = ({ data, theme, parentPageTitle }) => {
         {data?.title}
       </Typography>
       <Typography variant="body2" component="p" className={classes.description}>
-        {/* {convertToPlain(data?.description)} */}
-
-
-        {data?.description}
+        {convertToPlain(data?.description)}
       </Typography>
       {/** Footer section */}
       <Box

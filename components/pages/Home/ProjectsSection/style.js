@@ -5,8 +5,10 @@ const useStyles = makeStyles((theme) => ({
   root: (props) => ({
     padding: "8px 0px",
     backgroundImage: `url(${props.backgroundImage})`,
+   
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    marginTop:'50px'
   }),
   // Inner Container class
   innerContainer: {

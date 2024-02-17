@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
@@ -17,25 +15,25 @@ import {
   Tooltip,
   Modal,
 } from "@mui/material";
-import AccessibilityNew from "@mui/icons-material/AccessibilityNew";
-import Close from "@mui/icons-material/Close";
-import Check from "@mui/icons-material/Check";
-import ModeNight from "@mui/icons-material/ModeNight";
-import TextDecrease from "@mui/icons-material/TextDecrease";
-import TextIncrease from "@mui/icons-material/TextIncrease";
-import TextFormat from "@mui/icons-material/TextFormat";
-
+import {
+  AccessibilityNew,
+  Close,
+  Check,
+  ModeNight,
+  TextDecrease,
+  TextIncrease,
+  TextFormat,
+} from "@mui/icons-material";
 import { ChromePicker } from "react-color";
 import useStyles from "./style";
 
 const ClientThemeModal = ({ globalThemeConfig, defaultFontScale }) => {
- 
   let { t } = useTranslation("common");
   const router = useRouter();
   const classes = useStyles();
   const [isOpen, setIsOpen] = useState(false);
   const [currentConfig, setCurrentConfig] = useState({
-    primaryColor: globalThemeConfig?.primaryColor,
+    primaryColor: globalThemeConfig.primaryColor,
     fontScale: defaultFontScale,
     mode: "light",
     effectId: -1,
@@ -110,8 +108,7 @@ const ClientThemeModal = ({ globalThemeConfig, defaultFontScale }) => {
     router.reload();
   };
 
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object") {
       const currentTheme = JSON.parse(Cookies.get("THEMEPREF") || null);
       if (currentTheme) setCurrentConfig(currentTheme);
@@ -220,7 +217,7 @@ const ClientThemeModal = ({ globalThemeConfig, defaultFontScale }) => {
                     }`}
                     onClick={() => handleChangeFilter(filter.id)}
                   >
-                    <Image src={filter.src} width={20} height={20} alt="" />
+                    <Image src={filter.src} width={20} height={20} />
                     <Typography variant="subtitle2">
                       {t(filter.label)}
                     </Typography>

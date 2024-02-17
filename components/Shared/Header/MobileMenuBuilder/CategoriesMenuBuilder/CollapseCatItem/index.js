@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 import { useState } from "react";
 import {
@@ -41,7 +40,7 @@ const CollapseCatItem = ({ item, toggle }) => {
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        {childrenCategories.map((subItem, ind) =>
+        {childrencategories?.map((subItem, ind) =>
           subItem.childrenCategories.length == 0 ? (
             <SingleCatItem key={ind} item={subItem} toggle={toggle} />
           ) : (

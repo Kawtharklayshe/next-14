@@ -1,4 +1,3 @@
-
 import React, { Fragment } from "react";
 import { headerTypes } from "../../../../../../constants/enums";
 import usePartialAnimiStyles from "../../../CustomAnimation/partialAnimation";
@@ -27,7 +26,8 @@ const SocialMediaList = ({
     return `${Math.round(delay * 10) / 10}s`;
   };
 
-  const linksArr = socialMediaLinks?.map(({ channel, value }, index) => {
+  const linksArr = socialMediaLinks
+    .map(({ channel, value }, index) => {
       switch (channel) {
         case "Facebook":
           if (value != "")

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,9 +15,7 @@ import {
   langsEnum,
 } from "../../../../../constants/enums";
 import isHomePg from "../../../../../utilies/detectHomePage/isHomePg";
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
-import SettingsOutlined from "@mui/icons-material/SettingsOutlined";
-
+import { KeyboardArrowDown, SettingsOutlined } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   Menu,
@@ -37,7 +34,7 @@ import ContactsList from "./ContactsList";
 import SocialMediaList from "./SocialMediaList";
 import usePartialAnimiStyles from "../../CustomAnimation/partialAnimation";
 import useUpperPartStyles from "../../CustomAnimation/upperPartHeader";
-// import ClientThemeSetting from "../../../ClientThemeModal";
+import ClientThemeSetting from "../../../ClientThemeModal";
 import useStyles from "./style";
 
 const MobileHeader = (props) => {
@@ -167,7 +164,7 @@ const MobileHeader = (props) => {
                   isReadyToAnimate() ? partialAnimiClasses.root : undefined
                 }`}
                 sx={{
-                  // animationDelay: calcDelay(1.6, socialMediaLinks?.length),
+                  animationDelay: calcDelay(1.6, socialMediaLinks.length),
                 }}
                 onClick={handleOpenLangMenu}
                 endIcon={<KeyboardArrowDown />}
@@ -179,7 +176,7 @@ const MobileHeader = (props) => {
                   width={20}
                   height={20}
                   priority
-                  alt="" />
+                />
                 <Typography
                   variant="subtitle2"
                   component="span"
@@ -240,7 +237,7 @@ const MobileHeader = (props) => {
                   isReadyToAnimate() ? partialAnimiClasses.root : undefined
                 }`}
                 sx={{
-                  animationDelay: calcDelay(1.7, socialMediaLinks?.length),
+                  animationDelay: calcDelay(1.7, socialMediaLinks.length),
                 }}
                 onClick={handleOpenCurrencyMenu}
                 endIcon={<KeyboardArrowDown />}
@@ -289,13 +286,13 @@ const MobileHeader = (props) => {
                   isReadyToAnimate() ? partialAnimiClasses.root : undefined
                 }
                 sx={{
-                  animationDelay: calcDelay(1.8, socialMediaLinks?.length),
+                  animationDelay: calcDelay(1.8, socialMediaLinks.length),
                 }}
               >
-                {/* <ClientThemeSetting
+                <ClientThemeSetting
                   globalThemeConfig={theme}
                   defaultFontScale={defaultFontScale}
-                /> */}
+                />
               </Box>
               {/** end of Client theme setting */}
             </Grid>
@@ -306,7 +303,7 @@ const MobileHeader = (props) => {
                 isReadyToAnimate() ? partialAnimiClasses.root : undefined
               }`}
               sx={{
-                animationDelay: calcDelay(1.9, socialMediaLinks?.length),
+                animationDelay: calcDelay(1.9, socialMediaLinks.length),
               }}
             >
               {/* <AutocompleteSearchField
@@ -331,7 +328,7 @@ const MobileHeader = (props) => {
                   isReadyToAnimate() ? partialAnimiClasses.root : undefined
                 }`}
                 sx={{
-                  animationDelay: calcDelay(2.1, socialMediaLinks?.length),
+                  animationDelay: calcDelay(2.1, socialMediaLinks.length),
                 }}
               >
                 <MenuIcon className={classes.menuIcon} />
@@ -349,7 +346,7 @@ const MobileHeader = (props) => {
                     isReadyToAnimate() ? partialAnimiClasses.root : undefined
                   }`}
                   style={{
-                    animationDelay: calcDelay(2.3, socialMediaLinks?.length),
+                    animationDelay: calcDelay(2.3, socialMediaLinks.length),
                   }}
                 />
               )}
@@ -361,7 +358,7 @@ const MobileHeader = (props) => {
                   isReadyToAnimate() ? partialAnimiClasses.root : undefined
                 }`}
                 sx={{
-                  animationDelay: calcDelay(2.5, socialMediaLinks?.length),
+                  animationDelay: calcDelay(2.5, socialMediaLinks.length),
                 }}
                 onClick={toggleCartPopup}
               >

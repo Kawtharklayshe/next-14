@@ -43,8 +43,7 @@ export default function Services(props) {
     setCurrentPage(value);
     Router.push(`${Router.pathname}?p=${value}`);
   };
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

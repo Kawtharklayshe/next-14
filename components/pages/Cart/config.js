@@ -1,5 +1,3 @@
-
-
 import CreditCardSharpIcon from "@mui/icons-material/CreditCardSharp";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CheckIcon from "@mui/icons-material/Check";

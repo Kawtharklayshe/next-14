@@ -10,12 +10,10 @@ import useStyles from "./style";
 
 const MenuBuilder = ({
   theme,
-  navPages,
   navList = [],
   isReadyToAnimate,
   animationDelay,
 }) => {
-
   const Router = useRouter();
   let { t } = useTranslation("common");
   const classes = useStyles();
@@ -30,7 +28,6 @@ const MenuBuilder = ({
    *  function for calculating current available width and display nav items
    */
   const calculateWidthAndReArrang = () => {
-
     if (document.getElementById("navParentContainer")) {
       let newMenuItems = [],
         newRestMenuItems = [],
@@ -55,13 +52,11 @@ const MenuBuilder = ({
         }
       }
       setTempList(newMenuItems);
-  
       setRestMenuItems(newRestMenuItems);
     }
   };
 
- 
- useEffect( () => {
+  useEffect(() => {
     calculateWidthAndReArrang();
     window.addEventListener("resize", calculateWidthAndReArrang);
     return () =>
@@ -69,7 +64,7 @@ const MenuBuilder = ({
   }, []);
   return (
     <Box className={classes.root} id="webNavList">
-      {navList.map((navItem, index) => {
+      {tempList.map((navItem, index) => {
         let Component;
 
         if (navItem.children.length == 0)

@@ -80,8 +80,7 @@ export default function MaintenanceAndSupport({ data, theme, headerType }) {
     onSubmit: (values) => handleSubmitValues(values),
   });
 
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

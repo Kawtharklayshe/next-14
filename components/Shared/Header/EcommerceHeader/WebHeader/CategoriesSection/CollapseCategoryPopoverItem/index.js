@@ -1,13 +1,12 @@
-
-
 import { useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 import { uid } from "react-uid";
 import { Box, Collapse, Typography } from "@mui/material";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import FiberManualRecordRounded from "@mui/icons-material/FiberManualRecordRounded";
-
+import {
+  ExpandMore,
+  ExpandLess,
+  FiberManualRecordRounded,
+} from "@mui/icons-material";
 import SingleCategoryPopoverItem from "../SingleCategoryPopoverItem";
 import useStyles from "./style";
 
@@ -42,7 +41,7 @@ const CollapseCategoryPopoverItem = ({ category, onClick }) => {
               className={classes.collapseImage}
             />
           </Box>
-          {category.childrenCategories.map((child) =>
+          {category.childrencategories?.map((child) =>
             child.childrenCategories.length ? (
               <CollapseCategoryPopoverItem
                 key={uid(child)}

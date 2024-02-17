@@ -1,11 +1,10 @@
-
 import React from "react";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import { uid } from "react-uid";
 import { colors } from "./config";
 import { Box, Typography } from "@mui/material";
-import  List  from "@mui/icons-material/List";
+import { List } from "@mui/icons-material";
 import MainCategoryNavItem from "./MainCategoryNavItem";
 import usePartialAnimiStyles from "../../../CustomAnimation/partialAnimation";
 import useStyles from "./style";

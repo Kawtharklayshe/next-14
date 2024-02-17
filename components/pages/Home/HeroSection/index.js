@@ -19,15 +19,10 @@ const HeroSection = ({
   featureSectionData,
 }) => {
   const { type, content } = heroData;
-
   const classes = useStyles();
 
   return (
     <Box id="heroSection" className={classes.root}>
-      
-     
-      
-
       <Box className="animatedHero">
         <Box className="first" />
         <Box className="second" />

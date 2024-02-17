@@ -1,5 +1,3 @@
-
-
 import { Fragment, useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,9 +14,7 @@ import {
   Divider,
   CircularProgress,
 } from "@mui/material";
-import AddSharp from "@mui/icons-material/AddSharp";
-import RemoveSharp from "@mui/icons-material/RemoveSharp";
-
+import { AddSharp, RemoveSharp } from "@mui/icons-material";
 import HeartIcon from "../../../../assets/SVG/HeartIcon";
 import useStyles from "./style";
 

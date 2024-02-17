@@ -61,7 +61,7 @@ function convertUTCDateToLocalDate(date) {
 
   var offset = date.getTimezoneOffset() / 60;
   var hours = date.getHours();
-
+  console.log("mdmdmsms", date);
   newDate.setHours(hours - offset);
 
   return newDate;
@@ -74,6 +74,7 @@ const date = (date) => {
   const today = new Date();
 
   const isToday = today.toDateString() === constructedDate.toDateString();
+  console.log("mdmdmllld", isToday);
 
   const requiredDate = isToday
     ? formatAMPM(new Date(`${date} utc`))
@@ -115,7 +116,7 @@ export const getMessages = async () => {
 
   lastMessage = messages[messages.length - 1]?.id || 0;
 
-
+  console.log("mdmdmd", messages);
   messagesLength += messages.length;
 
   if (!messages) {

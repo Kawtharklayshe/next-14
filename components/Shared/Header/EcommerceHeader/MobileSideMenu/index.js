@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
@@ -65,7 +64,6 @@ const MobileSideMenu = ({
       {/** end of header section */}
       {/** content section */}
       <MobileMenuBuilder
-      
         navList={data}
         theme={theme}
         toggle={toggle}
@@ -73,7 +71,7 @@ const MobileSideMenu = ({
       />
       {/** end of content section */}
       {/** Account section */}
-      <Grid item xs={12} className={classes.accountSectionContainer}>
+      {/* <Grid item xs={12} className={classes.accountSectionContainer}>
         <Typography
           variant="h6"
           component="h2"
@@ -81,11 +79,11 @@ const MobileSideMenu = ({
         >
           {t("My Account")}
         </Typography>
-      </Grid>
-      <Divider />
+      </Grid> */}
+      {/* <Divider /> */}
       {/** end of Account section */}
       {/** Login section */}
-      {!userInfo?.isLogged && (
+      {/* {!userInfo?.isLogged && (
         <Grid item xs={12} className={classes.loginSectionContainer}>
           <Typography
             variant="subtitle1"
@@ -113,7 +111,7 @@ const MobileSideMenu = ({
             {t("Register")}
           </Typography>
         </Grid>
-      )}
+      )} */}
       {/** end of Login section */}
       {/** Social media section */}
       <Grid item xs={12} className={classes.socialMediaContainer}>

@@ -1,4 +1,3 @@
-
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import { useState, useEffect } from "react";
@@ -14,7 +13,7 @@ import {
   TextField,
   CircularProgress,
 } from "@mui/material";
-import Close  from "@mui/icons-material/Close";
+import { Close } from "@mui/icons-material";
 import useStyles from "./style";
 
 export default function AddReviewModal({
@@ -33,8 +32,7 @@ export default function AddReviewModal({
   const handleChangeRating = (value) => {
     setRate(value);
   };
- 
- useEffect( () => {
+  useEffect(() => {
     setRate(0);
     setComment("");
   }, [isOpen]);

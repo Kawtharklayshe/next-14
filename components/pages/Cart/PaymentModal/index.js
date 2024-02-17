@@ -101,8 +101,7 @@ const PaymentModal = ({
   // };
 
   // // initialize form inputs
-  //
-//  useEffect( () => {
+  // useEffect(() => {
   //   if (typeof window === "object" && isOpen) {
   //     const interval = setInterval(() => {
   //       if (document.readyState === "complete") {

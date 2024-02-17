@@ -56,15 +56,13 @@ function LearningVideos({ initialData, headerType, theme }) {
     autherizedFetcher
   );
 
- 
- useEffect( () => {
+  useEffect(() => {
     if (data) {
       setPagesCount(data.pageItems.totalPages);
     }
   }, [data]);
 
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

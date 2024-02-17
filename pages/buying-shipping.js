@@ -33,8 +33,7 @@ export default function BuyingAndShipping({ data, headerType, theme }) {
     ],
     headerType: headerType,
   });
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

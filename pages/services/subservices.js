@@ -49,8 +49,7 @@ export default function SubServices(props) {
     const queryUrl = `id=${Router.query.id}&p=${value}`;
     Router.push(`${Router.pathname}?${queryUrl}`);
   };
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

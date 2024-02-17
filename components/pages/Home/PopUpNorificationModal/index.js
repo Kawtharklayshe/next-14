@@ -1,5 +1,3 @@
-
-
 import { Backdrop, Box, Modal, Fade, Typography, Button } from "@mui/material";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import useStyles from "./style";

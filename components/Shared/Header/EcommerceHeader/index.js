@@ -76,8 +76,7 @@ const EcommerceHeader = (props) => {
   };
 
   // for handling  global nav behavior on scrolling
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object")
       document.addEventListener("scroll", handleEvent);
 
@@ -87,15 +86,13 @@ const EcommerceHeader = (props) => {
   }, []);
 
   // Reset the isFirstRender state when you navigate back to the Home pg
- 
- useEffect( () => {
+  useEffect(() => {
     if (!isHomePg(Router)) return;
     setIsFirstRender(true);
   }, [Router.asPath]);
 
   // for handle click event outside the cart popup menu
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object") {
       document.addEventListener("click", (e) => {
         if (e.target.id == "cartDropShadowWrapper") setIsCartPopupOpen(false);
@@ -138,7 +135,6 @@ const EcommerceHeader = (props) => {
           isFirstRender={isFirstRender}
         />
         <MobileSideMenu
-        
           theme={theme}
           toggle={toggleMobileSideMenu}
           setToggle={setIsSideMenuOpen}

@@ -38,8 +38,7 @@ const MyOrders = ({ theme }) => {
     GetUserOrdersList(currentPage, 10),
     autherizedFetcher
   );
- 
- useEffect( () => {
+  useEffect(() => {
     if (data) {
       setPagesCount(data.totalPages);
     }

@@ -36,12 +36,10 @@ const ServiceCard = ({ item, parentPageTitle }) => {
       </Typography>
       <Typography
         variant="subtitle1"
-        component="div"
+        component="p"
         className={classes.description}
-        dangerouslySetInnerHTML={{ __html: item.description }}
       >
-      
-
+        {convertToPlain(item.description)}
       </Typography>
       <CustomButton
         onSubmit={handleClick}

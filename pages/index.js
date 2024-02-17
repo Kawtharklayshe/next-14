@@ -1,7 +1,6 @@
-
 import Head from "next/head";
 import { useState, useEffect, useLayoutEffect } from "react";
-// import useTranslation from "next-translate/useTranslation";
+import useTranslation from "next-translate/useTranslation";
 import { getFetch } from "../services/httpService";
 import { GET_HOME_INFO } from "../services/endpoints";
 import { getSEOKeywordsContent } from "../utilies/utiliesFuctions";
@@ -31,23 +30,18 @@ export default function Home(props) {
     notifications,
     devicesCategory,
   } = props;
-
+  
   const classes = useStyles();
   const [heroHeight, setHeroHeight] = useState(0);
   const [open, setOpen] = useState(false);
-  // let { t, lang } = useTranslation("common");
- 
-
-
-  //   const isFirstRender =
-  // typeof window === "object" && JSON.parse(localStorage.getItem("isFirstRender"));
+  let { t, lang } = useTranslation("common");
+  const isFirstRender = JSON.parse(localStorage.getItem("isFirstRender"));
 
   const handleClose = () => setOpen(false);
 
- 
- useEffect( () => {
+  useEffect(() => {
     // to make sure that the modal will show up just once
-    if (typeof window !== "object") return;
+    if (typeof window !== "object" || !isFirstRender) return;
 
     setTimeout(() => {
       setOpen(true);
@@ -56,7 +50,7 @@ export default function Home(props) {
     localStorage.setItem("isFirstRender", JSON.stringify(false));
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== "object") return;
 
     const navHeight = document.getElementById("navbar").offsetHeight;
@@ -68,16 +62,17 @@ export default function Home(props) {
   }, []);
 
   return (
+  
     <Box className={classes.root}>
       <Head>
-        {/* <title>{t("home")}</title> */}
-        <title>home</title>
+        <title>{t("home")}</title>
         <meta
           name="keywords"
-          content={getSEOKeywordsContent(data?.data?.seo?.seoTags)}
+          content={getSEOKeywordsContent(data.data.seo.seoTags)}
         />
         <meta name="description" content={data?.data?.seo?.seoDescription} />
       </Head>
+     
       <HeroSection
         mainHeaderType={mainHeaderType}
         headerType={headerType}
@@ -86,15 +81,16 @@ export default function Home(props) {
         devicesCategory={devicesCategory}
         featureSectionData={data?.data?.sectionsContent?.feature}
       />
+        <div class="container relative">
       {data?.data?.webLayout?.sections.map((section, index) => {
         return (
           <Box key={index}>
             {section.name == "services" && (
               <ServicesSection data={data?.data?.sectionsContent?.services} />
             )}
-            {section.name == "introSection" && (
+            {/* {section.name == "introSection" && (
               <IntroSection data={data?.data?.sectionsContent?.introSection} />
-            )}
+            )} */}
             {section.name == "testimonial" && (
               <TestimonialsSection
                 data={data?.data?.sectionsContent?.testimonial}
@@ -109,7 +105,7 @@ export default function Home(props) {
                 theme={theme}
               />
             )}
-           {section.name == "approach" && (
+            {section.name == "approach" && (
               <ApporachSection data={data?.data?.sectionsContent?.approach} />
             )}
             {section.name == "ourClient" && (
@@ -120,13 +116,13 @@ export default function Home(props) {
             {section.name == "category" && (
               <CategoriesSection data={data?.data?.sectionsContent?.category} />
             )}
-            {/* {section.name == "product" && (
+            {section.name == "product" && (
               <ProductsSection
                 data={data?.data?.sectionsContent?.product}
                 theme={theme}
               />
-            )} */}
-             {section.name == "communicateus" && (
+            )}
+            {section.name == "communicateus" && (
               <CommunicateUsSection
                 data={data?.data?.sectionsContent?.communicateus}
               />
@@ -142,12 +138,15 @@ export default function Home(props) {
           </Box>
         );
       })}
+        </div>
       <PopUpNotificationModal
         open={open}
         handleClose={handleClose}
         data={notifications?.popup}
       />
+     
     </Box>
+  
   );
 }
 export async function getStaticProps({ locale }) {

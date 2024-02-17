@@ -31,8 +31,7 @@ export default function Orders({ headerType, theme }) {
     ],
   });
 
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

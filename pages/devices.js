@@ -34,8 +34,7 @@ const Devices = ({ data, headerType, theme }) => {
     ],
     headerType: headerType,
   });
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

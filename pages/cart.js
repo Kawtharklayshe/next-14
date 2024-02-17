@@ -36,8 +36,7 @@ export default function Cart({ theme, headerType }) {
   const [activeStep, setActiveStep] = useState(tab ? 1 : 0);
   const [skipped, setSkipped] = useState(new Set());
   const [succeededOrderData, setSucceededOrderData] = useState();
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -32,7 +30,7 @@ import {
 } from "@mui/material";
 import useUpperPartStyles from "../CustomAnimation/upperPartHeader";
 import usePartialAnimiStyles from "../CustomAnimation/partialAnimation";
-// import ClientThemeSetting from "../../ClientThemeModal";
+import ClientThemeSetting from "../../ClientThemeModal";
 import useStyles from "./style";
 
 const FolioHeader = (props) => {
@@ -107,8 +105,7 @@ const FolioHeader = (props) => {
   };
 
   // for handling  global nav behavior on scrolling
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window !== "object") return;
 
     document.addEventListener("scroll", handleScroll);
@@ -119,8 +116,7 @@ const FolioHeader = (props) => {
   }, []);
 
   // descover when we're on mid & small screens
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window !== "object") return;
 
     const setResponsiveness = () => {
@@ -178,7 +174,7 @@ const FolioHeader = (props) => {
               >
                 {theme?.logo && (
                   <Link href="/" passHref>
-                    {/* <a> */}
+                    <a>
                       <Image
                         src={theme.logo}
                         alt="logo"
@@ -187,7 +183,7 @@ const FolioHeader = (props) => {
                         className={classes.logoImage}
                         priority
                       />
-                    {/* </a> */}
+                    </a>
                   </Link>
                 )}
               </Grid>
@@ -210,10 +206,10 @@ const FolioHeader = (props) => {
                       animationDelay: `0.42s`, // should start after Links section has been shown
                     }}
                   >
-                    {/* <ClientThemeSetting
+                    <ClientThemeSetting
                       globalThemeConfig={theme}
                       defaultFontScale={defaultFontScale}
-                    /> */}
+                    />
                   </Box>
                   {/** end of Client theme setting */}
                   {/** Language section */}
@@ -237,7 +233,7 @@ const FolioHeader = (props) => {
                           width={20}
                           height={20}
                           priority
-                          alt="" />
+                        />
                       </IconButton>
                     </Tooltip>
                     <Typography
@@ -295,7 +291,6 @@ const FolioHeader = (props) => {
             {/** Menu Section */}
             <Grid item md={9} lg={10} className={classes.menuContainer}>
               <MenuBuilder
-               navPages={pages}
                 navList={newNavBarItems}
                 theme={theme}
                 isReadyToAnimate={isReadyToAnimate}

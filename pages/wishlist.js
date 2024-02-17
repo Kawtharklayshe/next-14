@@ -61,12 +61,10 @@ export default function Wishlist({ theme, headerType }) {
     GetWishlistItems(currentPage),
     autherizedFetcher
   );
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
- 
- useEffect( () => {
+  useEffect(() => {
     if (data) {
       setPagesCount(data.totalPages);
     }

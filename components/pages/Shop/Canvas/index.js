@@ -9,8 +9,7 @@ const Canvas = ({ children, isOpen, toggle, setToggle }) => {
   const classes = useStyles({ isOpen });
 
   // for handling click event outside the vertical filters menu on mobile
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object") {
       document.addEventListener("click", (e) => {
         if (e.target.id == "dropShadowWrapper") setToggle(false);

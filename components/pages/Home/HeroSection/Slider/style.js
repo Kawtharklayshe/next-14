@@ -4,10 +4,10 @@ const useStyles = makeStyles((theme) => ({
   // root class
   root: (props) => ({
     width: "100%",
-    height:
-      props.headerType == props.headerTypes.colored
-        ? `${props.heroHeight}px`
-        : "100vh",
+    // height:
+    //   props.headerType == props.headerTypes.colored
+    //     ? `${props.heroHeight}px`
+    //     : "100vh",
     position:
       props.headerType == props.headerTypes.colored ? "relative" : "unset",
     color: theme.palette.primary.main,
@@ -51,9 +51,10 @@ const useStyles = makeStyles((theme) => ({
   DetailsInnerContainer: {
     display: "flex",
     flexDirection: "column",
+    textAlign:'center',
     height: "100%",
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
   },
 
   // Animation class

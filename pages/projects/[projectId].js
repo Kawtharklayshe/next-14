@@ -49,8 +49,7 @@ const ProjectDetails = ({ data, headerType, theme }) => {
     endDate: data?.data?.item?.endDate,
     images: data?.data?.item?.mediaItems,
   };
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

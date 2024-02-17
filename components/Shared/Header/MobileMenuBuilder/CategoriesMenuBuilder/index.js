@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 import {
@@ -20,7 +19,7 @@ const CategoriesMenuBuilder = ({ categories, toggleMenu }) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const renderMenu = categories.map((catItem, index) =>
+  const renderMenu = categories?.map((catItem, index) =>
     catItem.childrenCategories.length == 0 ? (
       <SingleCatItem key={index} item={catItem} toggle={toggleMenu} />
     ) : (

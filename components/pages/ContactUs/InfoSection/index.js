@@ -1,4 +1,3 @@
-
 import useTranslation from "next-translate/useTranslation";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";

@@ -1,4 +1,3 @@
-
 import React, { Fragment } from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -9,7 +8,8 @@ import useStyles from "./style";
 const SocialMediaList = ({ socialMediaLinks }) => {
   const classes = useStyles();
 
-  const linksArr = socialMediaLinks?.map(({ channel, value }, index) => {
+  const linksArr = socialMediaLinks
+    .map(({ channel, value }, index) => {
       switch (channel) {
         case "Facebook":
           if (value != "")

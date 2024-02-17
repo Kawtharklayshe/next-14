@@ -1,7 +1,5 @@
-
-
 import { useState } from "react";
-import ZoomIn  from "@mui/icons-material/ZoomIn";
+import { ZoomIn } from "@mui/icons-material";
 import FullImage from "../../../Shared/FullImage";
 import useStyles from "./style";
 const GalleryImage = ({ item, images }) => {

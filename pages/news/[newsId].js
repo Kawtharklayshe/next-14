@@ -48,8 +48,7 @@ const NewsDetails = ({ data, headerType, theme }) => {
     subTitle: data?.data?.item?.subTitle,
     images: data?.data?.item?.mediaItems,
   };
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

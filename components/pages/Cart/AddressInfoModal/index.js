@@ -50,8 +50,7 @@ const AddresssInfoModal = ({
   };
 
   // update form values whenever address info change
- 
- useEffect( () => {
+  useEffect(() => {
     if (addressInfo)
       setInitialValues({
         address: addressInfo.address,

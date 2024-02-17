@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import { headerTypes } from "../../../../../constants/enums";
 import { Params } from "./config";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Parallax from "./Parallax/Parallax.js";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Typography, Button, Box, Container } from "@mui/material";
 import "swiper/css/autoplay";
@@ -13,7 +14,8 @@ import "swiper/css/scrollbar";
 import "swiper/css/controller";
 import "swiper/css";
 import useStyles from "./style";
-
+import GridContainer from "./Grid/GridContainer.js";
+import GridItem from "./Grid/GridItem.js";
 const Slider = ({ data = [], headerType, heroHeight }) => {
   const Router = useRouter();
   const classes = useStyles({ headerType, headerTypes, heroHeight });
@@ -46,18 +48,23 @@ const Slider = ({ data = [], headerType, heroHeight }) => {
         dir={Router.locale == "ar" ? "rtl" : "ltr"}
         className={classes.swiper}
       >
+
+       
         {data.map((item, i) => (
           <SwiperSlide
             key={item.id}
             dir={Router.locale == "ar" ? "rtl" : "ltr"}
             className={classes.slide}
           >
-            <img src={item.images} className={classes.slideImage}/>
-
-
+            {/* <img src={item.images} className={classes.slideImage} /> */}
             <Box className={classes.slideOverlay} />
-            <Container maxWidth="false" className={classes.detailsContainer}>
-              <Box
+           
+
+
+            <Parallax image={item.images}>
+        <div className={classes.container}>
+          <GridContainer>
+          <Box
                 className={`${classes.DetailsInnerContainer} ${
                   activeIndex == 0
                     ? classes.detailsAnimation
@@ -89,10 +96,13 @@ const Slider = ({ data = [], headerType, heroHeight }) => {
                   </Button>
                 )}
               </Box>
-            </Container>
+          </GridContainer>
+        </div>
+      </Parallax>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> 
+      
     </Box>
   );
 };

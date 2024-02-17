@@ -33,8 +33,7 @@ export default function NewPage({ data, headerType, theme }) {
     ],
     headerType: headerType,
   });
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

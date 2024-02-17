@@ -226,14 +226,14 @@ function SignIN({ theme }) {
                   >
                     {t("sign_in_field_title_4")}{" "}
                     <Link href="/signup" passhref>
-                      {/* <a
+                      <a
                         style={{
                           color: theme?.primaryColor,
                           margin: "0px 3px",
                         }}
-                      > */}
+                      >
                         {t("sign_in_field_title_5")}
-                      {/* </a> */}
+                      </a>
                     </Link>
                   </Typography>
                   <Typography

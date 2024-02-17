@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: theme.palette.onBackground.dark,
     cursor: "pointer",
+    
   },
 }));
 

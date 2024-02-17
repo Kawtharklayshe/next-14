@@ -42,8 +42,7 @@ const ServiceDetails = (props) => {
     ],
     headerType: headerType,
   });
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

@@ -10,7 +10,6 @@ function useTheme() {
         language,
         detectedCurrency
       );
-      console.log("err")
       data = await res.json();
     } catch (e) {}
     return data;

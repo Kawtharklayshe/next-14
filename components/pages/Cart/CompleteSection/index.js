@@ -24,10 +24,9 @@ const CompleteSection = ({ theme, orderInfo }) => {
     }, [15000]);
   };
 
-  //  
- useEffect( () => {
+  //   useEffect(() => {
   //     handleMandatoryRefresh();
-    }, []);
+  //   }, []);
   return (
     <Grid container className={classes.root}>
       <Grid item xs={12}>

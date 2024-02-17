@@ -45,8 +45,7 @@ const gallery = ({ data, headerType, theme }) => {
     handlegalleryImages(data?.data?.pageItems)
   );
 
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
 

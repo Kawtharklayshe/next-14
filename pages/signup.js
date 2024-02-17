@@ -78,8 +78,7 @@ function SignUp({ theme }) {
     onSubmit: (values) => handleSubmitValues(values),
   });
 
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object") {
       if (Router.query.email && Router.query.isConfirmed)
         setEmail(Router.query.email);
@@ -289,14 +288,14 @@ function SignUp({ theme }) {
                     >
                       {t("sign_up_field_title_3")}{" "}
                       <Link href="/signin" passhref>
-                        {/* <a
+                        <a
                           style={{
                             color: theme?.primaryColor,
                             margin: "0px 3px",
                           }}
-                        > */}
+                        >
                           {t("sign_up_field_title_4")}
-                        {/* </a> */}
+                        </a>
                       </Link>
                     </Typography>
                   </Grid>

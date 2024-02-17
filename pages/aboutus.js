@@ -43,8 +43,7 @@ const About = (props) => {
     description: data?.data?.pageItems?.description,
     images: data?.data?.pageItems?.mediaItems,
   };
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, []);
   return (

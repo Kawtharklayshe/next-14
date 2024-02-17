@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import {
   Box,
@@ -15,11 +13,7 @@ import {
   FormHelperText,
 } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
-import Mail from "@mui/icons-material/Mail";
-import Lock from "@mui/icons-material/Lock";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-
+import { Mail, Lock, Visibility, VisibilityOff } from "@mui/icons-material";
 import useStyles from "./style";
 
 /** Email Input Filed */

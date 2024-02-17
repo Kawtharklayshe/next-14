@@ -1,5 +1,3 @@
-
-
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { Fragment, useState } from "react";
@@ -16,9 +14,7 @@ import {
   Skeleton,
   CircularProgress,
 } from "@mui/material";
-import AddSharp from "@mui/icons-material/AddSharp";
-import RemoveSharp from "@mui/icons-material/RemoveSharp";
-
+import { AddSharp, RemoveSharp } from "@mui/icons-material";
 import CloseIcon from "@mui/icons-material/Close";
 import useStyles from "./style";
 

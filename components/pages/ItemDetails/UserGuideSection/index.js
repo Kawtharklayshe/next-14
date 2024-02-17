@@ -1,11 +1,7 @@
-
-
 import { useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 import { Box, Button, Collapse, Typography } from "@mui/material";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-
+import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import useStyles from "./style";
 
 const UserGuideSection = ({ data, title }) => {

@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Fragment, useState } from "react";
 import { useRouter } from "next/router";
@@ -10,9 +9,7 @@ import {
   removeFromCart,
 } from "../../../../../Redux/slices/cartSlice/aysncActions";
 import { Box, Typography, Skeleton, CircularProgress } from "@mui/material";
-import AddSharp from "@mui/icons-material/AddSharp";
-import RemoveSharp from "@mui/icons-material/RemoveSharp";
-
+import { AddSharp, RemoveSharp } from "@mui/icons-material";
 import CloseIcon from "@mui/icons-material/Close";
 import useStyles from "./style";
 
@@ -73,7 +70,7 @@ const CartPopupCard = ({ cartItem }) => {
         width={72}
         height={72}
         className={classes.productImage}
-        alt="" />
+      />
       <Box className={classes.detailsContainer}>
         <Typography variant="subtitle2" className={classes.productTitle}>
           {cartItem.item.name}

@@ -45,8 +45,7 @@ const Projects = (props) => {
     Router.push(`${Router.pathname}?p=${value}`);
   };
   const projects = data?.data?.pageItems?.items;
- 
- useEffect( () => {
+  useEffect(() => {
     checkLoadImages(setLoading);
   }, [currentPage]);
 

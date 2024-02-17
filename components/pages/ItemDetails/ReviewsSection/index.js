@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
@@ -65,8 +64,7 @@ const ReviewsSection = ({ itemSlug, itemId, initialData, title, theme }) => {
     { revalidateOnFocus: false }
   );
 
- 
- useEffect( () => {
+  useEffect(() => {
     if (data) {
       setPagesCount(data.totalPages);
       setItems(data.items);

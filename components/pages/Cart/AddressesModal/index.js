@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect, Fragment } from "react";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
@@ -26,7 +24,7 @@ import {
   CircularProgress,
   Button,
 } from "@mui/material";
-import  Place from "@mui/icons-material/Place";
+import { Place } from "@mui/icons-material";
 import AddressCard from "../AddressCard";
 import AddresssInfoModal from "../AddressInfoModal";
 import useStyles from "./style";
@@ -114,7 +112,7 @@ const AddressesModal = ({
     }
   };
 
- useEffect( () => {
+  useEffect(() => {
     data && setAddresses(data.addresses);
     if (areasData) {
       let temp = areasData.areas.map((area) => ({

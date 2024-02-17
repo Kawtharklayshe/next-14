@@ -1,4 +1,3 @@
-
 import { Fragment, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
@@ -184,7 +183,8 @@ const Footer = ({ theme }) => {
         return <Fragment />;
     }
   };
-  const fetchData = async () => {
+
+  useEffect(async () => {
     let res = await getFetch(
       FOOTER,
       process.env.NEXT_PUBLIC_MERCHANT,
@@ -192,9 +192,6 @@ const Footer = ({ theme }) => {
     );
     let { data } = await res?.json();
     setFullData(reShapeData(data));
-  };
-  useEffect( () => {
-    fetchData()
   }, []);
 
   const SendEmail = async () => {
@@ -211,8 +208,11 @@ const Footer = ({ theme }) => {
   return (
     <Box className={classes.root}>
       <Waves />
+     
       <Box className={classes.mainFooterContainer}>
         <Container maxWidth="false" className={classes.innerContainer}>
+        <footer class="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">    
+    <div class="container relative">
           <Grid container className={classes.firstRowContainer}>
             <Grid item xs={12} md={4} className={classes.logoContainer}>
               <img
@@ -264,6 +264,20 @@ const Footer = ({ theme }) => {
                 )}
                 {/** end of First Column */}
                 {/** Second Column */}
+               
+                {/** end of Second Column */}
+                {/** Third Column */}
+                {column.columnName == "SocialMedia" && (
+                  <Box className={classes.ColumnContainer}>
+                    <Typography className={classes.columnTitle} variant="h6">
+                      {t(column.title)}
+                    </Typography>
+                    {column.contacts.map((contact) =>
+                      handleDispalySocialMediaItem(contact)
+                    )}
+                  </Box>
+                )}
+                {/** end of Third Column */}
                 {column.columnName == "StayConnected" && (
                   <Box className={classes.ColumnContainer}>
                     <Typography className={classes.columnTitle} variant="h6">
@@ -280,19 +294,6 @@ const Footer = ({ theme }) => {
                     </Button>
                   </Box>
                 )}
-                {/** end of Second Column */}
-                {/** Third Column */}
-                {column.columnName == "SocialMedia" && (
-                  <Box className={classes.ColumnContainer}>
-                    <Typography className={classes.columnTitle} variant="h6">
-                      {t(column.title)}
-                    </Typography>
-                    {column.contacts.map((contact) =>
-                      handleDispalySocialMediaItem(contact)
-                    )}
-                  </Box>
-                )}
-                {/** end of Third Column */}
                 {/** Fourth Column */}
                 {column.columnName == "Links" && (
                   <Box className={classes.ColumnContainer}>
@@ -315,8 +316,12 @@ const Footer = ({ theme }) => {
               </Grid>
             ))}
           </Grid>
+          </div>
+      </footer>
         </Container>
       </Box>
+      
+     
     </Box>
   );
 };

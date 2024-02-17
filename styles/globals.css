@@ -1,7 +1,8 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: "Sakkal Majalla Regular";
@@ -22,7 +23,16 @@
   font-weight: 400;
   font-style: normal;
 }
+/* @font-face {
+  font-family: "Nunito Sans";
+  src: url("../Fonts/nunito_Sans/NunitoSans-Italic-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+  font-weight: 400;
+  font-style: normal;
+} */
 
+.swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.jss128.swiper-backface-hidden {
+  height: 700px;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -30,7 +40,7 @@
   /* font-family: "Sakkal Majalla Regular", sans-serif; */
   /* font-family: "Cairo", sans-serif; */
   /* font-family: "Roboto", sans-serif; */
-  font-family: "Droid Arabic Kufi";
+  font-family: "Nunito", sans-serif !important;
   /* font-family: "El Messiri", sans-serif;
   font-family: "Inter", sans-serif; */
 }
@@ -938,11 +948,6 @@ input[type="number"] {
     height: 600px !important;
   }
 } */
-
-
-.swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden.makeStyles-swiper-156 {
-  height: 800px;
-}
 @media (min-width: 1200px) and (max-width: 1334) {
   .PaddingMenu {
     margin-right: -50px !important;

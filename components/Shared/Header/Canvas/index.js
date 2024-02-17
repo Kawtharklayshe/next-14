@@ -1,5 +1,3 @@
-
-
 import { useEffect } from "react";
 import { Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -9,8 +7,7 @@ const Canvas = ({ children, isOpen, toggle, setToggle }) => {
   const classes = useStyles({ isOpen });
 
   // for handle clicking event outside the mobile menu
- 
- useEffect( () => {
+  useEffect(() => {
     if (typeof window === "object") {
       document.addEventListener("click", (e) => {
         if (e.target.id == "mobileSideMenuDropShadowWrapper") setToggle(false);
