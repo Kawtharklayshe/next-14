@@ -12,6 +12,7 @@ import TestimonialsSection from "../components/pages/Home/TestimonialsSection";
 import OurClientsSection from "../components/pages/Home/OurClientsSection";
 import ProductsSection from "../components/pages/Home/ProductsSection";
 import CommunicateUsSection from "../components/pages/Home/CommunicateUsSection";
+import PublicationSection from "../components/pages/Home/PublicationSection";
 import NewsSection from "../components/pages/Home/NewsSection";
 import GallerySection from "../components/pages/Home/GallerySection";
 import StatisticsSection from "../components/pages/Home/StatisticsSection";
@@ -20,6 +21,7 @@ import ApporachSection from "../components/pages/Home/ApproachSection";
 import CategoriesSection from "../components/pages/Home/CategoriesSection";
 import PopUpNotificationModal from "../components/pages/Home/PopUpNorificationModal";
 import useStyles from "../components/pages/Home/style";
+import EventSection from "../components/pages/Home/EventSection";
 
 export default function Home(props) {
   const {
@@ -96,6 +98,8 @@ export default function Home(props) {
                 data={data?.data?.sectionsContent?.testimonial}
               />
             )}
+
+            
             {section.name == "projects" && (
               <ProjectsSection data={data?.data?.sectionsContent?.projects} />
             )}
@@ -105,6 +109,19 @@ export default function Home(props) {
                 theme={theme}
               />
             )}
+            {section.name == "eventType" && (
+              <EventSection
+                data={data?.data?.sectionsContent?.eventType}
+              />
+            )}
+             {section.name == "publications" && (
+             
+
+
+             <PublicationSection   data={data?.data?.sectionsContent?.eventType}
+                           />
+                           
+                         )}
             {section.name == "approach" && (
               <ApporachSection data={data?.data?.sectionsContent?.approach} />
             )}
@@ -126,7 +143,13 @@ export default function Home(props) {
               <CommunicateUsSection
                 data={data?.data?.sectionsContent?.communicateus}
               />
+
+
+              
             )}
+              
+             
+           
             {section.name == "statistic" && (
               <StatisticsSection
                 data={data?.data?.sectionsContent?.statistic}

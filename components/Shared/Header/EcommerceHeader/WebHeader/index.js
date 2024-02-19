@@ -236,7 +236,7 @@ const WebHeader = (props) => {
                     className={classes.cartAndLanguageContainer}
                   >
                     {/** Search section */}
-                    {!show && (
+                    {/* {!show && (
                       <Button
                         size="small"
                         className={`${classes.searchButton} ${
@@ -251,10 +251,10 @@ const WebHeader = (props) => {
                       >
                         <Search className={classes.searchIcon} />
                       </Button>
-                    )}
+                    )} */}
                     {/** end of Search section */}
                     {/** Cart section */}
-                    <Box
+                    {/* <Box
                       className={`${cubicAnimatioClasses.root} ${
                         isReadyToAnimate()
                           ? partialAnimiClasses.root
@@ -273,7 +273,7 @@ const WebHeader = (props) => {
                           {<CartIcon className={classes.cartIcon} />}
                         </span>
                       </Badge>
-                    </Box>
+                    </Box> */}
                     {/** end of Cart section */}
                     {/** Client theme setting */}
                     <Box

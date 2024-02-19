@@ -51,7 +51,17 @@ const MenuBuilder = ({
           break;
         }
       }
+      newMenuItems = newMenuItems.map(el => {
+        if (el.link === 'home') {
+          return {
+            ...el,
+            link: '/'
+          };
+        }
+        return el;
+      });
       setTempList(newMenuItems);
+      console.log('newMenuItems',newMenuItems)
       setRestMenuItems(newRestMenuItems);
     }
   };

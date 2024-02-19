@@ -1,6 +1,7 @@
-import classes from "../../styles/customLoader/style.module.css";
-
+// import classes from "../../styles/customLoader/style.mod/ule.css";
+import useStyles from "./style";
 const CustomLoader = () => {
+  const classes = useStyles();
   return (
     <div className={classes.container}>
       <div className={`${classes.dot} ${classes.uno}`}></div>

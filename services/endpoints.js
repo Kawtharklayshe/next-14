@@ -1,7 +1,7 @@
 export const baseURL = process.env.NEXT_PUBLIC_BACK_END_PUBLIC_PATH;
 export const alternativeBaseURL =
   process.env.NEXT_PUBLIC_BACK_END_PUBLIC_PATH_SECONDARY; // In case the "baseURL" in not working, then you can use it[http with IP/PORT]
-export const GET_HOME_INFO = `${baseURL}/web/home`;
+export const GET_HOME_INFO = `${baseURL}/web/home/new`;
 export const GET_THEME = `${baseURL}/web/GlobalTheme/new`;
 export const GET_GALLERY = `${baseURL}/web/gallery?limit=30`;
 export const GET_NEWS = (pageCount, pageSize) =>
