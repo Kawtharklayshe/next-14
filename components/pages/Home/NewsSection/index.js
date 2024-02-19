@@ -31,14 +31,15 @@ const NewsSection = ({ data, theme }) => {
   
     <Box data-aos="zoom-out" className={classes.root}>
     <Container maxWidth="false" className={classes.innerContainer}>
-          <Grid item xs={12} lg={3} className={classes.titlesContainer}>
-            <Typography variant="h6" component="h6" className={classes.title}>
-              {data.detail.title}
-            </Typography>
-            <Typography variant="subtitle1" className={classes.subTitle}>
-              {data.detail.subTitle}
-            </Typography>
-          </Grid>
+    <Grid container direction="column" alignItems="center" paddingBottom={8} textAlign="center">
+  <Typography variant="h3" component="h3" gutterBottom marginTop={6} marginBottom={6}>
+   {data.detail.title}
+  </Typography>
+
+  <Typography variant="body1" color="textSecondary" maxWidth="xl">
+  {data.detail.subTitle}
+  </Typography>
+</Grid>
          
      
           <Swiper
@@ -66,12 +67,14 @@ const NewsSection = ({ data, theme }) => {
               })}
             </Swiper>
            
-      <div className="flex justify-end mt-2">
-    <a href="/news" className="">
-     <Typography variant="h6" color="blue" className="mb-2 !font-medium">
-     See More   <ArrowForward  />
+            <div className="flex justify-end mt-10">
+      <a href="/news" className={classes.buttonClass}>
+      <Typography variant="h6" className="mb-2 !font-medium">
+     See More    <ArrowForward  />
         </Typography>
-    </a>
+
+        </a>
+  
   </div>
   </Container>
   </Box>

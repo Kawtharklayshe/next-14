@@ -30,13 +30,13 @@ const EventSection=({ theme, data }) =>{
   return (
 
     <div className={classes.container}>
-      <Grid container direction="column" alignItems="center" paddingBottom={8} textAlign="center">
+        <Grid container direction="column" alignItems="center" paddingBottom={8} textAlign="center">
   <Typography variant="h3" component="h3" gutterBottom marginTop={6} marginBottom={6}>
-   {data.detail.title}
+   {data.detail.title} Explore Latest Events
   </Typography>
 
   <Typography variant="body1" color="textSecondary" maxWidth="xl">
-  {data.detail.subTitle}
+  {data.detail.subTitle} test
   </Typography>
 </Grid>
     <div className={classes.grid}>
@@ -57,7 +57,7 @@ const EventSection=({ theme, data }) =>{
     </div>
   </CardContent>
   <div className={classes.buttonContainer}>
-    <Button variant="text" color="primary" className="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+    <Button variant="text" className={classes.buttonClass} >
       See More <ArrowForward  />
     </Button>
   </div>

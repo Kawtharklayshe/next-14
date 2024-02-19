@@ -8,6 +8,7 @@ import {
   CardContent,
   CardMedia,
 } from "@mui/material";
+
 import Image from "next/image";
 import Link from "next/link";
 // import style from "../../styles/homePage/style.module.css";

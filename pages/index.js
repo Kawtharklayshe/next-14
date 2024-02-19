@@ -12,7 +12,7 @@ import TestimonialsSection from "../components/pages/Home/TestimonialsSection";
 import OurClientsSection from "../components/pages/Home/OurClientsSection";
 import ProductsSection from "../components/pages/Home/ProductsSection";
 import CommunicateUsSection from "../components/pages/Home/CommunicateUsSection";
-import PublicationSection from "../components/pages/Home/PublicationSection";
+import PublicationSection from "../components/pages/Home/PublicationSection/Type2";
 import NewsSection from "../components/pages/Home/NewsSection";
 import GallerySection from "../components/pages/Home/GallerySection";
 import StatisticsSection from "../components/pages/Home/StatisticsSection";
@@ -114,11 +114,11 @@ export default function Home(props) {
                 data={data?.data?.sectionsContent?.eventType}
               />
             )}
-             {section.name == "publications" && (
+             {section.name == "publication" && (
              
 
 
-             <PublicationSection   data={data?.data?.sectionsContent?.eventType}
+             <PublicationSection   data={data?.data?.sectionsContent?.publication}
                            />
                            
                          )}

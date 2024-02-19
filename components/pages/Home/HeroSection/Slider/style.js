@@ -52,9 +52,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     textAlign:'center',
+    marginLeft:50,
     height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "start",
+    alignItems: "start",
   },
 
   // Animation class

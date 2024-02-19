@@ -10,6 +10,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     marginTop:'50px'
   }),
+  container: {
+    position: 'relative',
+    marginTop: theme.spacing(24),
+    [theme.breakpoints.down('md')]: {
+      marginTop: theme.spacing(16),
+    },
+    marginBottom:10
+  },
   // Inner Container class
   innerContainer: {
     maxWidth: "95%",
@@ -24,6 +32,22 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.onBackground.main,
     margin: "8px 0px !important",
     fontWeight: "600 !important",
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    padding: theme.spacing(2),
+    marginTop: theme.spacing(4),
+  },
+  buttonClass: {
+
+    position: 'absolute',
+    color: theme.palette.primary.main,
+    bottom: 0,
+    right: 0,
+    padding: 16, /* Assuming theme.spacing(2) equals 16px */
+    marginTop: 72, /* Assuming theme.spacing(4) equals 32px */
   },
 }));
 

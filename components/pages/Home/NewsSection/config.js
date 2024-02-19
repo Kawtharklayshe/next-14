@@ -16,12 +16,12 @@ export const Params = {
     },
     // when window width is >= 768px
     768: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 40,
     },
     // when window width is >= 992px
     992: {
-      slidesPerView: 3,
+      slidesPerView: 1,
       spaceBetween: 40,
     },
     // when window width is >= 1200px

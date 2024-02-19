@@ -8,7 +8,7 @@ import SwiperCore, {
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Params } from "./config";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography ,Grid} from "@mui/material";
 import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -24,12 +24,15 @@ const GallerySection = ({ data }) => {
   return (
     <Box data-aos="fade-up" className={classes.root}>
       <Container maxWidth="false" className={classes.innerContainer}>
-        <Typography variant="h6" component="h6" className={classes.title}>
-          {data.detail.title}
-        </Typography>
-        <Typography variant="subtitle1" className={classes.subTitle}>
-          {data.detail.subTitle}
-        </Typography>
+      <Grid container direction="column" alignItems="center" paddingBottom={8} textAlign="center">
+  <Typography variant="h3" component="h3" gutterBottom marginTop={6} marginBottom={6}>
+   {data.detail.title}
+  </Typography>
+
+  <Typography variant="body1" color="textSecondary" maxWidth="xl">
+  {data.detail.subTitle}
+  </Typography>
+</Grid>
         <Swiper
           {...Params}
           dir={Router.locale == "ar" ? "rtl" : "ltr"}
